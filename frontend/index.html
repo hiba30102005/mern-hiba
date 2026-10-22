@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mes éléments — MERN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Mes éléments</h1>
+        <p class="status" id="backend-status">Backend : en attente…</p>
+      </header>
 
-</head>
-<body>
+      <section class="card">
+        <h2>Ajouter un élément</h2>
+        <form id="item-form" novalidate>
+          <label for="name">Nom *</label>
+          <input id="name" name="name" type="text" maxlength="100" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3" maxlength="500"></textarea>
+
+          <button type="submit" id="submit-btn">Ajouter</button>
+        </form>
+      </section>
+
+      <div id="message" class="message" role="alert" hidden></div>
+
+      <section class="card">
+        <div class="list-header">
+          <h2>Liste</h2>
+          <button type="button" id="refresh-btn" class="secondary">Actualiser</button>
+        </div>
+        <ul id="items" class="items"></ul>
+        <p id="empty" class="empty" hidden>Aucun élément pour le moment.</p>
+      </section>
+    </main>
+
     
-    
-    <script src="script.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
